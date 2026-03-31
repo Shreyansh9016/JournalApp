@@ -1,5 +1,6 @@
 package net.engineeringdigest.journalApp.api.response;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -16,6 +17,7 @@ public class WeatherResponse{
     @Setter
     public class Current{
         private int temperature;
+        @JsonProperty("weather_descriptions")
         private List<String> weather_descriptions;
         private int feelslike;
     }
