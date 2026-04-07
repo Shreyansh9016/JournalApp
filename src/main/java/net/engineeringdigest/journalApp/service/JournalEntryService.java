@@ -1,8 +1,8 @@
 package net.engineeringdigest.journalApp.service;
 
 import lombok.extern.slf4j.Slf4j;
-import net.engineeringdigest.journalApp.entity.JournalEntry;
-import net.engineeringdigest.journalApp.entity.User;
+import net.engineeringdigest.journalApp.Entity.JournalEntry;
+import net.engineeringdigest.journalApp.Entity.User;
 import net.engineeringdigest.journalApp.repository.JournalEntryRepository;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -32,13 +33,21 @@ public class JournalEntryService {
         in memory user ke journal entries me id add kr di
         aur collections me store kra di
          */
-        try{
+        try {
             User user = userService.findByUsername(username);
+
             journalEntry.setDate(LocalDateTime.now());
-            JournalEntry save = journalEntryRepository.save(journalEntry);
-            user.getJournalEntries().add(save);
+            JournalEntry saved = journalEntryRepository.save(journalEntry);
+            if (user.getJournalEntries() == null) {
+                user.setJournalEntries(new ArrayList<>());
+            }
+
+            user.getJournalEntries().add(saved);
+
             userService.saveUser(user);
+
         } catch (Exception e) {
+            e.printStackTrace();
             throw new RuntimeException(e);
         }
     }

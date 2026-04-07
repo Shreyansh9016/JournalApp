@@ -1,6 +1,6 @@
 package net.engineeringdigest.journalApp.cache;
 
-import net.engineeringdigest.journalApp.entity.ConfigJournalApp;
+import net.engineeringdigest.journalApp.Entity.ConfigJournalApp;
 import net.engineeringdigest.journalApp.repository.ConfigJournalAppRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

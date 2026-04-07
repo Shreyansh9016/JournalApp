@@ -32,7 +32,7 @@ public class UserDetailsServiceImplTests {
 
     @Test
     void loadUserByUsernameTest() {
-        when(userRepository.findByUsername(ArgumentMatchers.anyString())).thenReturn((net.engineeringdigest.journalApp.entity.User) User.builder().username("Ram").password("Ram").roles(String.valueOf(new ArrayList<>())).build());
+        when(userRepository.findByUsername(ArgumentMatchers.anyString())).thenReturn((net.engineeringdigest.journalApp.Entity.User) User.builder().username("Ram").password("Ram").roles(String.valueOf(new ArrayList<>())).build());
         UserDetails user = userDetailsService.loadUserByUsername("Ram");
         Assertions.assertNotNull(user);
     }

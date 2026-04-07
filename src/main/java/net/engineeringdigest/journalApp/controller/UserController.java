@@ -1,7 +1,7 @@
 package net.engineeringdigest.journalApp.controller;
 
 
-import net.engineeringdigest.journalApp.entity.User;
+import net.engineeringdigest.journalApp.Entity.User;
 import net.engineeringdigest.journalApp.repository.UserRepository;
 import net.engineeringdigest.journalApp.service.UserService;
 import net.engineeringdigest.journalApp.service.WeatherService;

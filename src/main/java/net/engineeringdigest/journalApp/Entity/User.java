@@ -1,4 +1,4 @@
-package net.engineeringdigest.journalApp.entity;
+package net.engineeringdigest.journalApp.Entity;
 
 
 import lombok.*;
@@ -23,7 +23,7 @@ public class User {
     @NonNull
     private String username;
     private String email;
-    private String sentimentAnalysis;
+    private boolean sentimentAnalysis;
     @NonNull
     private String password;
     @DBRef

@@ -1,6 +1,6 @@
 package net.engineeringdigest.journalApp.controller;
 
-import net.engineeringdigest.journalApp.entity.User;
+import net.engineeringdigest.journalApp.Entity.User;
 import net.engineeringdigest.journalApp.service.UserService;
 import net.engineeringdigest.journalApp.cache.AppCache;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +20,7 @@ public class AdminController {
     @Autowired
     AppCache appCache;
 
-    @RequestMapping("/all-users")
+    @GetMapping("/all-users")
     public ResponseEntity<?> getAllUsers(){
         List<User> all = userService.getAll();
         if(all != null && !all.isEmpty()){

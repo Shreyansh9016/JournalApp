@@ -15,6 +15,6 @@ public class UserRepositoryImplTest {
 
     @Test
     public void testSaveNewUser(){
-        userRepository.getUserforSA();
+        userRepository.getUserForSA();
     }
 }
